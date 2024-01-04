@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+def print_Argv(argv):
+    n = len(argv) - 1
+    if n == 0:
+        print("{:d} argument.".format(n))
+        return
+    else:
+        if n == 1:
+            print("{:d} argument:".format(n))
+        else:
+            i = 1
+            while i <= n:
+                print("{:d}: {:s}".format(i, argv[i]))
+                i += 1
+
+                if __name__ == "__main__":
+                    import sys
+                    print_Argv(sys.argv)
