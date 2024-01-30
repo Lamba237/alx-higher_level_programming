@@ -1,4 +1,5 @@
-Background Context
+****Background Context****
+
 Now that we understand that everything is an object and have a little bit of knowledge, let’s pause and look a little bit closer at how Python works with different types of objects.
 
 BTW, have you ever modified a variable without knowing it or wanting to? I mean:
@@ -28,7 +29,7 @@ Note that during interviews for Python positions, you will most likely have to a
 
 All your answers should be only one line in a file. No space before or after the answer.
 
-Resources
+****Resources****
 Read or watch:
 
 9.10. Objects and values
@@ -40,7 +41,7 @@ Python tuples: immutable but potentially changing
 Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-General
+****General****
 Why Python programming is awesome
 What is an object
 What is the difference between a class and an object or instance
@@ -56,7 +57,7 @@ What are the built-in mutable types
 What are the built-in immutable types
 How does Python pass variables to functions
 
-Requirements
+****Requirements****
 Python Scripts
 Allowed editors: vi, vim, emacs
 All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
