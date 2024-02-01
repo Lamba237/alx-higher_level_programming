@@ -1,81 +1,64 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
-Queen chess
+This Module solves the N queens challenge
 """
 import sys
 
 
-def is_it_safe(board, row, col, numb):
+def is_safe(b, row, col, m):
     """
-    :param board: board
+    :param b: board
     :param row: row
-    :param col: col
-    :param numb: number
-    :return: either true or false
+    :param col: column
+    :param m: m attribute
+    :return: either True or False
     """
-
     for i in range(col):
-        if board[row][i] == 1:
+        if b[row][i] == 1:
             return False
-
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
-        if board[i][j] == 1:
+        if b[i][j] == 1:
             return False
-
-    for i, j in zip(range(row, numb, 1), range(col, -1, -1)):
-        if board[i][j] == 1:
+    for i, j in zip(range(row, m, 1), range(col, -1, -1)):
+        if b[i][j] == 1:
             return False
-
     return True
 
 
-def solve_the_nqueens_util(board, col, nums, solutions):
+def solve_n_queens(my_board, col, n_num):
     """
-    :param board: board
+    :param my_board: my board
     :param col: column
-    :param nums: numbers
-    :param solutions: solution to program
-    :return: nothing
+    :param n_num: number n for iteration
+    :return: either True or res
     """
-    if col == nums:
-        solutions.append([[i, j] for i in range(nums) for j in range(nums) if board[i][j] == 1])
-        return
-
-    for i in range(nums):
-
-        if is_it_safe(board, i, col, nums):
-            board[i][col] = 1
-            solve_the_nqueens_util(board, col + 1, nums, solutions)
-            board[i][col] = 0
-
-
-def print_solution(number):
-    """
-    :param number: numbers
-    :return: nothing
-    """
-    board = [[0 for _ in range(number)] for _ in range(number)]
-    solutions = []
-    solve_the_nqueens_util(board, 0, number, solutions)
-
-    for solution in solutions:
-        print(solution)
+    if col == n_num:
+        for i in range(n_num):
+            for j in range(n_num):
+                if my_board[i][j] == 1:
+                    print("[[{}, {}]]".format(i, j), end="")
+        print()
+        return True
+    res = False
+    for i in range(n_num):
+        if is_safe(my_board, i, col, n_num):
+            my_board[i][col] = 1
+            res = solve_n_queens(my_board, col + 1, n_num) or res
+            my_board[i][col] = 0
+    return res
 
 
 if __name__ == "__main__":
-
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-
     try:
-        num = int(sys.argv[1])
-        if num < 4:
-            print("N must be at least 4")
-            sys.exit(1)
-
-        print_solution(num)
-
+        n = int(sys.argv[1])
     except ValueError:
         print("N must be a number")
         sys.exit(1)
+    if n < 4:
+        print("N must be at least 4")
+        sys.exit(1)
+    board = [[0 for i in range(n)] for j in range(n)]
+    solve_n_queens(board, 0, n)
