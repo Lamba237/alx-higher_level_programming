@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+a class that inherits from parent list
+"""
+
+
 class MyList(list):
     """
     prints a list in ascending order
