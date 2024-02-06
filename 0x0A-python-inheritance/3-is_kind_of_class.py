@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+function that checks if an object is an instance
+"""
+
+
 def is_kind_of_class(obj, a_class):
     """
     :param obj: object
