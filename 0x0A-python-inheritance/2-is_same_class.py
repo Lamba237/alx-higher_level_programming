@@ -1,11 +1,13 @@
 #!/usr/bin/python3
+"""
+checks if an object is an instane
+"""
+
+
 def is_same_class(obj, a_class):
     """
     :param obj: object to be checked
     :param a_class:  type
     :return: true else false
     """
-    if isinstance(obj, a_class):
-        return True
-    else:
-        return False
+    return isinstance(obj, a_class)
