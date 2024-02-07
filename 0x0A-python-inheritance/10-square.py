@@ -16,6 +16,9 @@ class Square(Rectangle):
     square class that inherits from Rectangle
     """
     def __init__(self, size):
+        """
+        method for initializing attributes
+        """
 
         super().__init__(size, size)
         self.integer_validator("size", size)
