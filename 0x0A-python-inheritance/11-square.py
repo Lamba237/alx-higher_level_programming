@@ -10,6 +10,7 @@ Module with class Rectangle
 ============================
 """
 
+
 class Square(Rectangle):
     """
     square class that inherits from Rectangle
