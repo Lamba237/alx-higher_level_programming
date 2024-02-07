@@ -16,6 +16,10 @@ class Square(Rectangle):
     square class that inherits from Rectangle
     """
     def __init__(self, size):
+        """
+        method for initializing attributes
+        """
+
         super().__init__(size, size)
         self.integer_validator("size", size)
         self.__size = size
@@ -24,7 +28,7 @@ class Square(Rectangle):
         """
         :return: area of square
         """
-        return self.__size * self.__size
+        return self.__size ** 2
 
     def __str__(self):
         """
