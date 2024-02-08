@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+function that looks for Json representation
+"""
 
 import json
 
