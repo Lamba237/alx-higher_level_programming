@@ -33,6 +33,7 @@ class Rectangle(Base):
         """
         :return: private attribute width
         """
+
         return self.__width
 
     @width.setter
@@ -41,6 +42,7 @@ class Rectangle(Base):
         :param value: value attribute
         :return: nothing
         """
+
         if type(width) is not int:
             raise TypeError("width must be an integer")
         elif width <= 0:
@@ -53,6 +55,7 @@ class Rectangle(Base):
         """
         :return: private instance attribute height
         """
+
         return self.__height
 
     @height.setter
@@ -61,6 +64,7 @@ class Rectangle(Base):
         :param value: to be assigned to
         :return: nothing
         """
+
         if type(height) is not int:
             raise TypeError("height must be an integer")
         elif height <= 0:
@@ -73,6 +77,7 @@ class Rectangle(Base):
         """
         :return: private att x
         """
+
         return self.__x
 
     @x.setter
@@ -81,6 +86,7 @@ class Rectangle(Base):
         :param value: value
         :return: nothing
         """
+
         if type(x) is not int:
             raise TypeError("x must be an integer")
         elif x < 0:
@@ -102,9 +108,17 @@ class Rectangle(Base):
         :param value: value
         :return: nothing
         """
+
         if type(y) is not int:
             raise TypeError("y must be an integer")
         elif y < 0:
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
+
+    def area(self):
+        """
+        method returns area of rectangle
+        """
+
+        return self.height * self.width
