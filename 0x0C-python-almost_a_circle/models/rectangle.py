@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-
-
-from models.base import Base
-
-
 """
 class called Rectangle that inherits from Base class
 """
+
+from models.base import Base
 
 
 class Rectangle(Base):
