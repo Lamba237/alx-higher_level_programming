@@ -22,10 +22,10 @@ class Rectangle(Base):
 
         super().__init__(id)
 
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
         # getter and setter for each private instance attribute
     @property
@@ -37,7 +37,7 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self, value):
+    def width(self, width):
         """
         :param value: value attribute
         :return: nothing
@@ -48,7 +48,7 @@ class Rectangle(Base):
         elif width <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.__width = value
+            self.__width = width
 
     @property
     def height(self):
@@ -59,7 +59,7 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def height(self, value):
+    def height(self, height):
         """
         :param value: to be assigned to
         :return: nothing
@@ -70,7 +70,7 @@ class Rectangle(Base):
         elif height <= 0:
             raise ValueError("height must be > 0")
         else:
-            self.__height = value
+            self.__height = height
 
     @property
     def x(self):
@@ -81,7 +81,7 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def x(self, value):
+    def x(self, x):
         """
         :param value: value
         :return: nothing
@@ -92,7 +92,7 @@ class Rectangle(Base):
         elif x < 0:
             raise ValueError("x must be >= 0")
         else:
-            self.__x = value
+            self.__x = x
 
     @property
     def y(self):
@@ -103,7 +103,7 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def y(self, value):
+    def y(self, y):
         """
         :param value: value
         :return: nothing
@@ -114,7 +114,7 @@ class Rectangle(Base):
         elif y < 0:
             raise ValueError("y must be >= 0")
         else:
-            self.__y = value
+            self.__y = y
 
     def area(self):
         """
