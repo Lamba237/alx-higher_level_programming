@@ -137,3 +137,36 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+
+
+    def update(self, *args, **kwargs):
+        """
+        Updating the class Rectangle with arguments
+        """
+
+        index = 0
+        if len(args) > 0 and args:
+            for i in args:
+                if index == 0:
+                    self.id = i
+                elif index == 1:
+                    self.width = i
+                elif index == 2:
+                    self.height = i
+                elif index == 3:
+                    self.x = i
+                elif index == 4:
+                    self.y = i
+                index += 1
+        else:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'width':
+                    self.width = value
+                elif key == 'height':
+                    self.height = value
+                elif key == 'x':
+                    self.x = value
+                elif key == 'y':
+                    self.y = value
