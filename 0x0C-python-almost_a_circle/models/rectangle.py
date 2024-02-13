@@ -130,8 +130,9 @@ class Rectangle(Base):
         instance with the character #
         """
 
-        for i in range(self.height):
-            print('#' * self.width)
+        [print() for i in range(self.y)]
+        [print(" " * self.x + "#" * self.width)
+                for line in range(self.height)]
 
 
     def __str__(self):
