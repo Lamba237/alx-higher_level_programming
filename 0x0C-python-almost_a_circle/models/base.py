@@ -55,3 +55,14 @@ class Base:
             return list()
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+
+        if cls.__name__ == 'Rectangle':
+            class_instance = cls(10, 2, 3)
+        if cls.__name__ == 'Square':
+            class_instance = cls(10, 2)
+        class_instance.update(**dictionary)
+        return class_instance
