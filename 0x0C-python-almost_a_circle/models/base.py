@@ -46,3 +46,12 @@ class Base:
         empty_list_json = Base.to_json_string(full_list_json)
         with open(cls.__name__+'.json', 'w') as f:
             f.write(empty_list_json)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+
+        if json_string is None:
+            return list()
+
+        return list(json_string)
