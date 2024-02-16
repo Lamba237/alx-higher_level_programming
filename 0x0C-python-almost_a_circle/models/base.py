@@ -32,3 +32,17 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes the JSON string to a file"""
+
+        if list_objs is None:
+            list_objs = []
+        full_list_json = list()
+        for fulano in list_objs:
+            full_list_json.append(fulano.to_dictionary())
+
+        empty_list_json = Base.to_json_string(full_list_json)
+        with open(cls.__name__+'.json', 'w') as f:
+            f.write(empty_list_json)
