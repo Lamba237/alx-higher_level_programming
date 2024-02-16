@@ -54,4 +54,4 @@ class Base:
         if json_string is None:
             return list()
 
-        return list(json_string)
+        return json_string
