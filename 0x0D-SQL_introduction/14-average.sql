@@ -4,5 +4,5 @@
 ALTER TABLE  `second_table`
 ADD `average` FLOAT(8);
 
-SELECT AVG(`score`)
+SELECT AVG(`score`) AS `average`
 FROM second_table;
