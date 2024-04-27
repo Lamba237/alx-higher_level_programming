@@ -11,13 +11,12 @@ import sys
 def displayError_Msg():
 
     url = sys.argv[1]
-    req = urllib.request.Request(url)
     try:
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(url) as response:
             body = respond.read()
             print(body.decode('utf-8'))
     except urllib.error.HTTPError as e:
-        print(f"Error code: {e.code}")
+        print("Error code:", e.code)
 
 
 if __name__ == "__main__":
