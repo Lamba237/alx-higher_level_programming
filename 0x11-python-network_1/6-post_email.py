@@ -9,7 +9,7 @@ import sys
 
 def post_req(url, email):
     r = requests.post(url, data=email)
-    print(r.text)
+    print("Your email is:", r.text)
 
 
 if __name__ == "__main__":
