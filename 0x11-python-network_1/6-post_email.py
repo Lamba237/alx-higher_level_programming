@@ -9,8 +9,8 @@ import sys
 
 def post_req(url, email):
     data = {'email': email}
-    r = requests.post(url, data=data)
-    print("Your email is:", r.text)
+    response = requests.post(url, data=data)
+    print("Your email is:", response.text)
 
 
 if __name__ == "__main__":
