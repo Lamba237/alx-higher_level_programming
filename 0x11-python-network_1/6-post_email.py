@@ -8,7 +8,8 @@ import sys
 
 
 def post_req(url, email):
-    r = requests.post(url, data=email)
+    data = {'email': email}
+    r = requests.post(url, data=data)
     print("Your email is:", r.text)
 
 
