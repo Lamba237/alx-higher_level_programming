@@ -12,8 +12,9 @@ import sys
 def Header():
     url = sys.argv[1]
     r = requests.get(url)
-    print(r.headers['X-Request-Id'])
+    return (r.headers['X-Request-Id'])
 
 
 if __name__ == "__main__":
-    Header()
+    header = Header()
+    print(header)
