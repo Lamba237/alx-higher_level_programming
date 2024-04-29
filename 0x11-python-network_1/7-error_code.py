@@ -12,6 +12,8 @@ def HTTP_status_code():
     r = requests.get(url)
     if r.status_code >= 400:
         print("Error code:", r.status_code)
+    else:
+        r.status_code
 
 
 if __name__ == '__main__':
