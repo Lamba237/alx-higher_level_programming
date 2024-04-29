@@ -13,7 +13,7 @@ def HTTP_status_code():
     if r.status_code >= 400:
         print("Error code:", r.status_code)
     else:
-        r.status_code
+        print(r.text)
 
 
 if __name__ == '__main__':
